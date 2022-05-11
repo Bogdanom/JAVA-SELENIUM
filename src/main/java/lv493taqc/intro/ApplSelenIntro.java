@@ -38,9 +38,7 @@ public class ApplSelenIntro {
 		driver.findElement(By.xpath("//input[@id='input-pin']")).sendKeys("8754");
 		
 		driver.findElement(By.xpath("//*[@id=\"account-security\"]/div[2]/div/div[1]/form/div[2]/button")).click();
-		
-		/**/
-		
+			
 		System.out.print("appl done");
 	}
 
