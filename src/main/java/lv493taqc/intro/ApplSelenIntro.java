@@ -21,7 +21,7 @@ public class ApplSelenIntro {
 		
 		driver.findElement(By.xpath("//header/nav[1]/div[1]/div[2]/div[1]/a[1]")).click();
 		
-		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		driver.findElement(By.xpath("//input[@id='input-email']")).click();
 		driver.findElement(By.xpath("//input[@id='input-email']")).clear();
