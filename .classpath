@@ -5,7 +5,9 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="tst"/>
 	<classpathentry kind="lib" path="C:/JAVA-CODE-2022/JAVA_SELENIUM/lib/selenium-java-4.1.4.jar"/>
 	<classpathentry kind="lib" path="C:/JAVA-CODE-2022/JAVA_SELENIUM/lib/selenium-java-4.1.4-sources.jar"/>
 	<classpathentry kind="lib" path="C:/JAVA-CODE-2022/JAVA_SELENIUM/lib/selenium-server-4.1.4.jar"/>
