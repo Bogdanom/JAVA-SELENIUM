@@ -44,6 +44,7 @@ public class OpenCardTestUpdated {
 	    public void f1() {
 	    	
 	    	driver.get("http://taqc-opencart.epizy.com/");
+	    	
 	    	driver.findElement(By.xpath("//span[contains(text(),'Currency')]")).click();
 	    	driver.findElement(By.xpath("//button[contains(text(),'$ US Dollar')]")).click();
 	    	
