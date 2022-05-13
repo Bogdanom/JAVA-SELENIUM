@@ -10,9 +10,9 @@ import org.testng.annotations.Test;
 public class OpenCardTest {
 	
 	@Test
-	public void unsuccessfulLogi() {
+	public void unsuccessfulLoginEmail() {
+//this test check if we have appropriate error message in case of log in with wrong email
 		
-// test check if we have appropriate error message in case of log in with wrong credentials
         System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
@@ -23,27 +23,87 @@ public class OpenCardTest {
 		
 		driver.findElement(By.xpath("//header/nav[1]/div[1]/div[2]/div[1]/a[1]")).click();
 		
-		//login
-		//driver.findElement(By.xpath("//input[@id='input-email']")).click();
 		driver.findElement(By.id("input-email")).click();
 		driver.findElement(By.xpath("//input[@id='input-email']")).clear();
 		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("wrongEmail");
 		
-		//driver.findElement(By.xpath("//input[@id='input-password']")).click();
 		driver.findElement(By.id("input-password")).click();
 		driver.findElement(By.xpath("//input[@id='input-password']")).clear();
 		driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys("Asdfg12@");
 		
 		driver.findElement(By.xpath("//body/div[@id='account-login']/div[2]/div[1]/div[1]/form[1]/div[3]/div[1]/button[1]")).click();
 		
-		/* works(print the message) if login/password is/are wrong*/
 		WebElement  alert = driver.findElement(By.xpath("//body/div[@id='account-login']/div[2]/div[1]"));
 		System.out.println("Message - " + alert.getText());
 
 		String expected="No match for E-Mail and/or Password.";
 		Assert.assertTrue(alert.getText().contains(expected));
 		
-		driver.quit();// close browser and stop web driver in memory
+		driver.quit();
 	}
+	//@Test
+	public void unsuccessfulLoginPassword() {
+//this test check if we have appropriate error message in case of log in with wrong Password
+		
+        System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+	
+		driver.get("https://www.opencart.com/");
+		
+		driver.findElement(By.xpath("//header/nav[1]/div[1]/div[2]/div[1]/a[1]")).click();
+		
+		driver.findElement(By.id("input-email")).click();
+		driver.findElement(By.xpath("//input[@id='input-email']")).clear();
+		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("bomemailn@gmail.com");
+		
+		driver.findElement(By.id("input-password")).click();
+		driver.findElement(By.xpath("//input[@id='input-password']")).clear();
+		driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys("wrongPassword");
+		
+		driver.findElement(By.xpath("//body/div[@id='account-login']/div[2]/div[1]/div[1]/form[1]/div[3]/div[1]/button[1]")).click();
+		
+		WebElement  alert = driver.findElement(By.xpath("//body/div[@id='account-login']/div[2]/div[1]"));
+		System.out.println("Message - " + alert.getText());
 
+		String expected="No match for E-Mail and/or Password.";
+		Assert.assertTrue(alert.getText().contains(expected));
+		
+		driver.quit();
+	}
+	
+	//@Test
+	public void unsuccessfulLoginCredentials() {
+//this test check if we have appropriate error message in case of log in with wrong Credentials
+		
+        System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+	
+		driver.get("https://www.opencart.com/");
+		
+		driver.findElement(By.xpath("//header/nav[1]/div[1]/div[2]/div[1]/a[1]")).click();
+		
+		driver.findElement(By.id("input-email")).click();
+		driver.findElement(By.xpath("//input[@id='input-email']")).clear();
+		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("wrongEmail");
+		
+		driver.findElement(By.id("input-password")).click();
+		driver.findElement(By.xpath("//input[@id='input-password']")).clear();
+		driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys("wrongPassword");
+		
+		driver.findElement(By.xpath("//body/div[@id='account-login']/div[2]/div[1]/div[1]/form[1]/div[3]/div[1]/button[1]")).click();
+		
+		WebElement  alert = driver.findElement(By.xpath("//body/div[@id='account-login']/div[2]/div[1]"));
+		System.out.println("Message - " + alert.getText());
+
+		String expected="No match for E-Mail and/or Password.";
+		Assert.assertTrue(alert.getText().contains(expected));
+		
+		driver.quit();
+	}
 }
