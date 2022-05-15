@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class OpenCardTestUpdated {
+public class OpenCardTestCSS {
 
 	private WebDriver driver;
 	
