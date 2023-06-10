@@ -41,7 +41,7 @@ public class OpenCardTest {
 		
 		driver.quit();
 	}
-	@Test
+	//@Test
 	public void unsuccessfulLoginPassword() {
 //this test check if we have appropriate error message in case of log in with wrong Password
 		
@@ -74,7 +74,7 @@ public class OpenCardTest {
 		driver.quit();
 	}
 	
-	//@Test
+	@Test
 	public void unsuccessfulLoginCredentials() {
 //this test check if we have appropriate error message in case of log in with wrong Credentials
 		
