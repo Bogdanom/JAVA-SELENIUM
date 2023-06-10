@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class OpenCardTest {
 	
-	@Test
+	//@Test
 	public void unsuccessfulLoginEmail() {
 //this test check if we have appropriate error message in case of log in with wrong email
 		
@@ -41,7 +41,7 @@ public class OpenCardTest {
 		
 		driver.quit();
 	}
-	//@Test
+	@Test
 	public void unsuccessfulLoginPassword() {
 //this test check if we have appropriate error message in case of log in with wrong Password
 		
