@@ -49,21 +49,24 @@ public class OpenCardTestCSS {
 	    	driver.get("http://taqc-opencart.epizy.com/");
 	    	
 	    	driver.findElement(By.xpath("//span[contains(text(),'Currency')]")).click();
+	    	Thread.sleep(2000);//for presentation only
 	    	driver.findElement(By.xpath("//button[contains(text(),'$ US Dollar')]")).click();
-	    	Thread.sleep(1000);//for presentation only
+	    	Thread.sleep(2000);//for presentation only
 	    	
 	    	driver.findElement(By.cssSelector("#search > input")).click();
 	    	driver.findElement(By.cssSelector("#search > input")).clear();
 	    	driver.findElement(By.cssSelector("#search > input")).sendKeys("mac");
+	    	Thread.sleep(2000);//for presentation only
+	    	
 	    	driver.findElement(By.xpath("//header/div[1]/div[1]/div[2]/div[1]/span[1]/button[1]")).click();
-	    	Thread.sleep(1000);//for presentation only
+	    	Thread.sleep(2000);//for presentation only
 	    	
 	    	WebElement price = getElementByName("MacBook").findElement(By.cssSelector("p.price"));
 	    	Assert.assertTrue(price.getText().contains("$602.00"));
-	    	Thread.sleep(1000);//for presentation only
+	    	Thread.sleep(2000);//for presentation only
 	    	
 	    	driver.findElement(By.xpath("//header/div[1]/div[1]/div[1]/div[1]/a[1]/img[1]")).click();//click on logo
-	    	//Thread.sleep(1000);//for presentation only
+	    	Thread.sleep(2000);//for presentation only
 	    	System.out.println("\t\t\t\t@Test f1()");
 	    }
 	    
