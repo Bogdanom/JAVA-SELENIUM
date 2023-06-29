@@ -19,10 +19,57 @@
 *.tar.gz
 *.rar
 
+# Addition
+# Ignore alltemporary files in the root directory
+*.[oa]
+
 # Single Module Project
+/.externalToolBuilders/
+/.settings
+/.metadata/
+/.recommendaers/
+/target/
 /bin/
+/build/
+/doc/
+/lib/
 /test-output/
+/allure-results/
+/,classpath
+/.project
+/.checkstyle
+/reports/
+/,idea/
+*iml
+*.ucls
+
+# Inore binary
+/.allure/
+*.bin
+*.exe
+*.xpi
+
+# Ignore log
+# *.log
+*.log.[1234567890]
+
+# Ignore Picture
+*.bmp
+
+# Multi Modules Project
+/**/.externalToolBuilders/
+/**/.settings
+/**/target/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /build/
+
+##################
+# NEW IGNORE FILES
+
+#Config Files
+*.ini
+
+#Binary Files
+*.dat
