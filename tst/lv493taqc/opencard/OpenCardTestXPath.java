@@ -48,20 +48,20 @@ public class OpenCardTestXPath {
 	    	//
 	    	driver.findElement(By.xpath("//button[@class='btn btn-link dropdown-toggle']")).click();
 	    	driver.findElement(By.xpath("//button[@name='EUR']")).click();
-	    	Thread.sleep(2000);//for presentation only
+	    	Thread.sleep(3000);//for presentation only
 	    	
 	    	driver.findElement(By.xpath("//input[@name='search']")).click();
 	    	driver.findElement(By.xpath("//input[@name='search']")).clear();
 	    	driver.findElement(By.xpath("//input[@name='search']")).sendKeys("mac");
 	    	driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
-	    	Thread.sleep(2000);//for presentation only
+	    	Thread.sleep(3000);//for presentation only
 	    	
 	    	WebElement price = driver.findElement(By.xpath("//a[text()='MacBook']/../following-sibling::p[@class='price']"));
 	    	Assert.assertTrue(price.getText().contains("472.33"));
-	    	Thread.sleep(2000);//for presentation only
+	    	Thread.sleep(3000);//for presentation only
 	    	
 	    	driver.findElement(By.xpath("//img[contains(@src, '/logo.png')]")).click();//click on logo
-	    	Thread.sleep(2000);//for presentation only
+	    	Thread.sleep(4000);//for presentation only
 	    	System.out.println("\t\t\t\t@Test f1()");
 	    }
 
