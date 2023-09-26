@@ -70,11 +70,13 @@ public class SmokeTest extends OpenCartTestRunner {
 		    
 		    loginPage.clickEmail();
 		    loginPage.clearEmail();
+//		    loginPage.setEmail("wrongEmail");
 		    loginPage.getEmail().sendKeys("wrongEmail");
 			Thread.sleep(1000);//for presentation only
 			
 			loginPage.clickPassword();
 		    loginPage.clearPassword();
+//		    loginPage.setPassword("wrongPassword");
 		    loginPage.getPassword().sendKeys("wrongEmail");
 			Thread.sleep(1000);//for presentation only
 			
@@ -82,8 +84,9 @@ public class SmokeTest extends OpenCartTestRunner {
 			
 			FailedLoginPage failedLogin = new FailedLoginPage(driver);
 			
-			Assert.assertTrue(failedLogin.getAlertText().contains(failedLogin.errorMessage));
-			Assert.assertEquals(failedLogin.errorMessage,failedLogin.getAlertText());
+			Assert.assertEquals(failedLogin.WARNING_MESSAGE,failedLogin.getAlertText());
+			Assert.assertTrue(failedLogin.getAlertText().contains(failedLogin.WARNING_MESSAGE));
+			
 			System.out.println(" Warning Message - " + failedLogin.getAlertText());
 			Thread.sleep(2000);//for presentation only
 						

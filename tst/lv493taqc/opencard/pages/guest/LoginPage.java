@@ -39,6 +39,10 @@ public class LoginPage {
 	public void clearEmail() {
 		getEmail().clear();
 	}
+	
+	public void setEmail(String email) {
+		getEmail().sendKeys(email);
+	}
 
 	public String getEmailText() {
 		return getEmail().getText();
@@ -55,6 +59,10 @@ public class LoginPage {
 
 	public void clearPassword() {
 		getPassword().clear();
+	}
+	
+	public void setPassword(String password) {
+		getPassword().sendKeys(password);
 	}
 	
 	public String getPasswordText() {

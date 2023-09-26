@@ -11,7 +11,7 @@ public class FailedLoginPage {
 	private WebElement alert;
 	private WebElement logo;
 	
-	public final String errorMessage = "Warning: No match for E-Mail Address and/or Password.";
+	public final String WARNING_MESSAGE = "Warning: No match for E-Mail Address and/or Password.";
 
 	public FailedLoginPage(WebDriver driver) {
 		this.driver=driver;

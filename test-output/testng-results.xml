@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-25T16:36:46 EEST" name="Default suite" finished-at="2023-09-25T16:37:05 EEST" duration-ms="19149">
+  <suite started-at="2023-09-26T19:16:43 EEST" name="Default suite" finished-at="2023-09-26T19:17:02 EEST" duration-ms="19755">
     <groups>
     </groups>
-    <test started-at="2023-09-25T16:36:46 EEST" name="Default test" finished-at="2023-09-25T16:37:05 EEST" duration-ms="19149">
+    <test started-at="2023-09-26T19:16:43 EEST" name="Default test" finished-at="2023-09-26T19:17:02 EEST" duration-ms="19755">
       <class name="lv493taqc.opencard.tests.SmokeTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:lv493taqc.opencard.tests.SmokeTest@11bd0f3b]" started-at="2023-09-25T16:36:46 EEST" name="beforeTest" finished-at="2023-09-25T16:36:46 EEST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:lv493taqc.opencard.tests.SmokeTest@11bd0f3b]" started-at="2023-09-26T19:16:43 EEST" name="beforeTest" finished-at="2023-09-26T19:16:43 EEST" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:lv493taqc.opencard.tests.SmokeTest@11bd0f3b]" started-at="2023-09-25T16:36:46 EEST" name="beforeClass" finished-at="2023-09-25T16:36:52 EEST" duration-ms="6575" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:lv493taqc.opencard.tests.SmokeTest@11bd0f3b]" started-at="2023-09-26T19:16:43 EEST" name="beforeClass" finished-at="2023-09-26T19:16:49 EEST" duration-ms="6298" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="unsuccessfulLoginPassword()[pri:0, instance:lv493taqc.opencard.tests.SmokeTest@11bd0f3b]" started-at="2023-09-25T16:36:52 EEST" name="unsuccessfulLoginPassword" finished-at="2023-09-25T16:37:04 EEST" duration-ms="11584" status="PASS">
+        <test-method signature="unsuccessfulLoginPassword()[pri:0, instance:lv493taqc.opencard.tests.SmokeTest@11bd0f3b]" started-at="2023-09-26T19:16:49 EEST" name="unsuccessfulLoginPassword" finished-at="2023-09-26T19:17:02 EEST" duration-ms="12429" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- unsuccessfulLoginPassword -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:lv493taqc.opencard.tests.SmokeTest@11bd0f3b]" started-at="2023-09-25T16:37:04 EEST" name="afterClass" finished-at="2023-09-25T16:37:05 EEST" duration-ms="903" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:lv493taqc.opencard.tests.SmokeTest@11bd0f3b]" started-at="2023-09-26T19:17:02 EEST" name="afterClass" finished-at="2023-09-26T19:17:02 EEST" duration-ms="945" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:lv493taqc.opencard.tests.SmokeTest@11bd0f3b]" started-at="2023-09-25T16:37:05 EEST" name="afterTest" finished-at="2023-09-25T16:37:05 EEST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:lv493taqc.opencard.tests.SmokeTest@11bd0f3b]" started-at="2023-09-26T19:17:02 EEST" name="afterTest" finished-at="2023-09-26T19:17:02 EEST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
