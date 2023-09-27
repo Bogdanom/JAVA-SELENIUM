@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage {
+public class LoginPage extends TopPart {
 
 	private WebDriver driver;
 
@@ -13,7 +13,7 @@ public class LoginPage {
 	private WebElement submit;
 	
 	public LoginPage(WebDriver driver) {
-		this.driver=driver;
+		super(driver);
 		initElements();
 	}
 
@@ -21,7 +21,7 @@ public class LoginPage {
 
 		email = driver.findElement(By.xpath("//input[@id='input-email']"));
 		password = driver.findElement(By.xpath("//input[@id='input-password']"));
-		submit = driver.findElement(By.xpath("//body/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/input[1]"));
+		submit = driver.findElement(By.xpath("//body/div[@id='account-login']/div[2]/div[1]/div[1]/form[1]/div[3]/div[1]/button[1]"));
 		
 	}
 

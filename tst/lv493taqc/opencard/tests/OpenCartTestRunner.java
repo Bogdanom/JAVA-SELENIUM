@@ -16,7 +16,7 @@ public abstract class OpenCartTestRunner {
 		System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("http://taqc-opencart.epizy.com/");
+		driver.get("https://www.opencart.com/");
 		System.out.println("\t\t@BeforeClass");
 	}
 

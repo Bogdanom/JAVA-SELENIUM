@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lv493taqc.opencard.tests.SmokeTest">
+      <class name="lv493taqc.opencard.OpenCardTest">
         <methods>
-          <include name="beforeClass"/>
-          <include name="unsuccessfulRegister"/>
-          <include name="afterClass"/>
-          <include name="afterTest"/>
-          <include name="beforeTest"/>
+          <include name="unsuccessfulLoginEmail"/>
         </methods>
-      </class> <!-- lv493taqc.opencard.tests.SmokeTest -->
+      </class> <!-- lv493taqc.opencard.OpenCardTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

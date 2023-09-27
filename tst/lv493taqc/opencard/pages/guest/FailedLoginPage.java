@@ -5,13 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class FailedLoginPage {
-	
+
 	private WebDriver driver;
 
 	private WebElement alert;
 	private WebElement logo;
 	
-	public final String WARNING_MESSAGE = "Warning: No match for E-Mail Address and/or Password.";
+	public final String WARNING_MESSAGE = "No match for E-Mail and/or Password.";
 
 	public FailedLoginPage(WebDriver driver) {
 		this.driver=driver;
@@ -19,9 +19,9 @@ public class FailedLoginPage {
 	}
 
 	private void initElements() {
-
-		alert = driver.findElement(By.xpath("//body/div[2]/div[1]"));
-		logo = driver.findElement(By.xpath("//header/div[1]/div[1]/div[1]/div[1]/a[1]/img[1]"));
+		
+		alert = driver.findElement(By.xpath("//body/div[@id='account-login']/div[2]/div[1]"));
+		logo = driver.findElement(By.xpath("//header/nav[1]/div[1]/div[1]/a[1]/img[1]"));
 
 	}
 	
@@ -60,10 +60,4 @@ public class FailedLoginPage {
 		public boolean isDisplayedLogo() {
 			return getLogo().isDisplayed();
 		}
-		// Functional
-
-		// Business Logic
-	
 }
-
-

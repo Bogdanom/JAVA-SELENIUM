@@ -10,7 +10,7 @@ public class FailedRegisterPage {
 	private WebElement alert;
 	private WebElement logo;
 	
-	public final String WARNING_MESSAGE = "Warning: You must agree to the Privacy Policy!";
+	public final String WARNING_MESSAGE = "Error: Username is already registered!";
 
 	public FailedRegisterPage(WebDriver driver) {
 		this.driver=driver;
@@ -19,8 +19,8 @@ public class FailedRegisterPage {
 
 	private void initElements() {
 		
-		alert = driver.findElement(By.xpath("//body/div[2]/div[1]"));
-		logo = driver.findElement(By.xpath("//header/div[1]/div[1]/div[1]/div[1]/a[1]/img[1]"));
+		alert = driver.findElement(By.xpath("//body/div[@id='account-register']/div[@id='register']/div[1]/div[1]/div[1]"));
+		logo = driver.findElement(By.xpath("//header/nav[1]/div[1]/div[1]/a[1]/img[1]"));
 
 	}
 	

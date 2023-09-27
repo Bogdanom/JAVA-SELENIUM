@@ -21,6 +21,7 @@ public class RegisterPage {
 		
 		email = driver.findElement(By.xpath("//input[@id='input-email']"));
 		password = driver.findElement(By.xpath("//input[@id='input-password']"));
+		//check submit xpath
 		submit = driver.findElement(By.xpath("//body/div[2]/div[2]/div[1]/form[1]/div[1]/div[1]/input[2]S"));
 		
 			}
