@@ -6,9 +6,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import lv493taqc.opencard.pages.guest.FailedLoginPage;
+import lv493taqc.opencard.pages.guest.FailedRegisterPage;
 import lv493taqc.opencard.pages.guest.HomePage;
 import lv493taqc.opencard.pages.guest.LoginPage;
 import lv493taqc.opencard.pages.guest.MyAccDropdown;
+import lv493taqc.opencard.pages.guest.RegisterPage;
 
 public class SmokeTest extends OpenCartTestRunner {
 	
@@ -37,10 +39,11 @@ public class SmokeTest extends OpenCartTestRunner {
     public void smokeTest2() throws InterruptedException {
     
 	HomePage homePage = new HomePage(driver); 	
-	MyAccDropdown myAcc = new MyAccDropdown(driver); 
-		
+			
     homePage.ClickMyAccount();	
     Thread.sleep(3000);//for presentation only
+    
+    MyAccDropdown myAcc = new MyAccDropdown(driver); 
     
     Assert.assertTrue(myAcc.isDisplayedRegister());
     Assert.assertTrue(myAcc.isDisplayedLogin()); 
@@ -53,32 +56,27 @@ public class SmokeTest extends OpenCartTestRunner {
      
 	}
 	
-	@Test
-		public void unsuccessfulLoginPassword() throws InterruptedException {
+	//@Test
+		public void unsuccessfulLogin() throws InterruptedException {
 	//check appropriate error message - log in with wrong Email and wrong Password
 			
-			HomePage homePage = new HomePage(driver); 	
-			MyAccDropdown myAcc = new MyAccDropdown(driver);	
+			HomePage homePage = new HomePage(driver); 		
 				
 		    homePage.ClickMyAccount();	
 		    Thread.sleep(1000);//for presentation only
+		    
+		    MyAccDropdown myAcc = new MyAccDropdown(driver);
 		    
 		    myAcc.ClickLogin();	
 		    Thread.sleep(1000);//for presentation only
 			
 		    LoginPage loginPage = new LoginPage(driver); 
-		    
-		    loginPage.clickEmail();
-		    loginPage.clearEmail();
-//		    loginPage.setEmail("wrongEmail");
-		    loginPage.getEmail().sendKeys("wrongEmail");
+		    		    
+		    loginPage.setEmail("wrongEmail");
 			Thread.sleep(1000);//for presentation only
 			
-			loginPage.clickPassword();
-		    loginPage.clearPassword();
-//		    loginPage.setPassword("wrongPassword");
-		    loginPage.getPassword().sendKeys("wrongEmail");
-			Thread.sleep(1000);//for presentation only
+			loginPage.setPassword("wrongPassword");
+		    Thread.sleep(1000);//for presentation only
 			
 			loginPage.clickSubmit();
 			
@@ -93,6 +91,43 @@ public class SmokeTest extends OpenCartTestRunner {
 			failedLogin.clickLogo();
 			Thread.sleep(3000);//for presentation only
 		}
+	
+	@Test
+	public void unsuccessfulRegister() throws InterruptedException {
+//check appropriate error message - log in with wrong Email and wrong Password
+		
+		HomePage homePage = new HomePage(driver); 		
+			
+	    homePage.ClickMyAccount();	
+	    Thread.sleep(1000);//for presentation only
+	    
+	    MyAccDropdown myAcc = new MyAccDropdown(driver);
+	    
+	    myAcc.clickRegister();	
+	    Thread.sleep(1000);//for presentation only
+		
+	    RegisterPage registerPage = new RegisterPage(driver); 
+	    		    
+	    registerPage.setEmail("wrongEmail");
+		Thread.sleep(1000);//for presentation only
+		
+		registerPage.setPassword("wrongPassword");
+	    Thread.sleep(1000);//for presentation only
+		
+	    registerPage.clickSubmit();
+		
+		FailedRegisterPage failedRegister = new FailedRegisterPage(driver);
+		
+		Assert.assertEquals(failedRegister.WARNING_MESSAGE,failedRegister.getAlertText());
+		Assert.assertTrue(failedRegister.getAlertText().contains(failedRegister.WARNING_MESSAGE));
+		
+		System.out.println(" Warning Message - " + failedRegister.getAlertText());
+		Thread.sleep(2000);//for presentation only
+					
+		failedRegister.clickLogo();
+		Thread.sleep(3000);//for presentation only
+	}
+	
 	//@Test
 	public void unsuccessfulLoginPasswordNoPO() throws InterruptedException {
 //check appropriate error message - log in with wrong Email and wrong Password - Not PageObject
