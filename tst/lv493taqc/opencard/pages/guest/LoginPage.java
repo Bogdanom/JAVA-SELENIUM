@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends TopPart {
+public class LoginPage {
 
 	private WebDriver driver;
 
@@ -13,7 +13,8 @@ public class LoginPage extends TopPart {
 	private WebElement submit;
 	
 	public LoginPage(WebDriver driver) {
-		super(driver);
+		//super(driver);
+		this.driver=driver;
 		initElements();
 	}
 

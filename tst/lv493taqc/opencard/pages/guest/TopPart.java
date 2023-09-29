@@ -30,7 +30,6 @@ public class TopPart {
 	}
 	// Page Object
 
-	
 	//LoginPage
 	public LoginPage getLoginPage() {
 		return loginPage;

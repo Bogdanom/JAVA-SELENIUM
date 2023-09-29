@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage extends TopPart {
 	
-	private WebElement myAccDropdown;
+	private WebElement logo;
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -15,28 +15,29 @@ public class HomePage extends TopPart {
 
 	private void initElements() {
 		
-		myAccDropdown = driver.findElement(By.xpath("//span[contains(text(),'My Account')]"));
+		logo = driver.findElement(By.xpath("//header/nav[1]/div[1]/div[1]/a[1]/img[1]"));
 		
 	}
 	
 	// Page Object
 	
-	// myAccount
-		public WebElement getMyAccDropdown() {
-			return myAccDropdown;
-		}
-		
-		public void ClickMyAccount() {
-			getMyAccDropdown().click();
-		}
-		
-		public String getMyAccDropdownText() {
-			return getMyAccDropdown().getText();
-		}
-		
-		public boolean isDisplayedMyAccDropdown() {
-			return getMyAccDropdown().isDisplayed();
-		}
+
+	// logo
+	public WebElement getLogo() {
+		return logo;
+	}
+
+	public void ClickLogo() {
+		getLogo().click();
+	}
+
+	public String getLogoText() {
+		return getLogo().getAttribute("alt");
+	}
+
+	public boolean isDisplayedLogo() {
+		return getLogo().isDisplayed();
+	}
 			// Functional
 			
 			// Business Logic

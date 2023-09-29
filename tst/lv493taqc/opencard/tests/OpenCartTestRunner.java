@@ -7,8 +7,11 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
+import lv493taqc.opencard.pages.guest.HomePage;
+
 public abstract class OpenCartTestRunner {
 
+	private static final Long ONE_SECOND_DELAY = 1000L;
 	protected WebDriver driver;
 
 	@BeforeClass
@@ -16,6 +19,7 @@ public abstract class OpenCartTestRunner {
 		System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		//driver.manage().window().setSize(new Dimension(640, 480));
 		driver.get("https://www.opencart.com/");
 		System.out.println("\t\t@BeforeClass");
 	}
@@ -37,5 +41,22 @@ public abstract class OpenCartTestRunner {
 		System.out.println("\t@AfterTest");
 		// logout(url/logout, delete cookies, delete cash)
 	}
+	
+	public HomePage loadApplication() {
+		return new HomePage(driver);
+		}
 
+	
+	protected void delay() {
+		delay(1);
+	}
+	protected void delay(int seconds) {
+		try {
+			Thread.sleep(seconds*ONE_SECOND_DELAY);
+		} catch (InterruptedException e) {
+
+
+			e.printStackTrace();
+		}
+	}
 }
