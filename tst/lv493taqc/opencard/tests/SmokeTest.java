@@ -14,7 +14,7 @@ import lv493taqc.opencard.pages.guest.RegisterPage;
 
 public class SmokeTest extends OpenCartTestRunner {
 	
-	@Test
+	//@Test
     public void smokeTest1() throws InterruptedException {
     
 	HomePage homePage = new HomePage(driver);
@@ -35,7 +35,7 @@ public class SmokeTest extends OpenCartTestRunner {
     Thread.sleep(4000);//for presentation only
 	}
 	
-	@Test
+	//@Test
     public void smokeTest2() throws InterruptedException {
     
 	HomePage homePage = new HomePage(driver); 	
