@@ -6,8 +6,8 @@
       <class name="lv493taqc.opencard.tests.SmokeTest">
         <methods>
           <include name="beforeClass"/>
-          <include name="unsuccessfulRegister"/>
           <include name="afterClass"/>
+          <include name="unsuccessfulLogin"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
         </methods>

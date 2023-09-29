@@ -11,11 +11,6 @@ public abstract class TopPart {
 	private WebElement currency;
 	private WebElement logo;
 	
-	private WebElement wishList;
-	private WebElement shoppingCart;
-	private WebElement checkout;
-	private WebElement seachTopField;
-	private WebElement seachTopButton;
 	//
 	
 	public TopPart(WebDriver driver) {
