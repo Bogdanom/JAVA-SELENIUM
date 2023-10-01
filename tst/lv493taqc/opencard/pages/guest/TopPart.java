@@ -29,7 +29,8 @@ public class TopPart {
 	}
 	// Page Object
 	
-	// login
+	// login link
+	
 	public WebElement getLogin() {
 		return login;
 	}
@@ -47,7 +48,8 @@ public class TopPart {
 		return getLogin().isDisplayed();
 	}
 
-	// register
+	// register link
+	
 	public WebElement getRegister() {
 		return register;
 	}
