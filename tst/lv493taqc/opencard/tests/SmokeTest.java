@@ -11,7 +11,7 @@ import lv493taqc.opencard.pages.guest.SuccessLoginPage;
 public class SmokeTest extends OpenCartTestRunner {
 
 	 @Test
-	public void smokeTest() throws InterruptedException {
+	public void smokeTest() {
 
 		HomePage homePage = loadApplication();
 
@@ -22,16 +22,15 @@ public class SmokeTest extends OpenCartTestRunner {
 		System.out.println("== homePage Logo = " + homePage.getLogoText());
 		System.out.println("== homePage Register = " + homePage.getRegisterText());
 		System.out.println("== homePage Login = " + homePage.getLoginText());
-		System.out.println("=====================");
-		
 		
 		homePage.clickLogin();
 		delay();
 		
+		System.out.println("=====================");
 	}
 
 	@Test
-	public void loginPage() throws InterruptedException {
+	public void loginPage() {
 		// check appropriate messages - log in with wrong credentials
 
 		FailedLoginPage failedLogin = loadApplication()
@@ -47,7 +46,7 @@ public class SmokeTest extends OpenCartTestRunner {
 		if (actual.equalsIgnoreCase(expected))  {
 			System.out.println("==Actual message equals Expected message");
 		} else {
-			System.out.println("==Actual message NOT equals Expected message");
+			System.out.println("==Actual message NOT equal Expected message");
 		}
 		System.out.println("== Warning Message expected - " + expected);
 		System.out.println("== Warning Message actual   - " + actual);
@@ -55,15 +54,17 @@ public class SmokeTest extends OpenCartTestRunner {
 //		Assert.assertTrue(failedLogin.getAlertText().contains(failedLogin.WARNING_MESSAGE));//error - space character on the 1st position
 
 		System.out.println("== Question Message - " + failedLogin.getQuestionText());
+		
 		Assert.assertTrue(failedLogin.getQuestionText().contains(failedLogin.QUESTION_MESSAGE));
 				
 		failedLogin.clickLogo();
 		delay();
+		
 		System.out.println("=====================");
 	}
 	
 	@Test
-	public void registerPage() throws InterruptedException {
+	public void registerPage() {
 		
         //check Register Page
 
@@ -83,7 +84,7 @@ public class SmokeTest extends OpenCartTestRunner {
 	//@Test
 	// work if manual fast pin inputting 7654
 	// task - catch page for security pin inputing
-	public void SuccessfulLogin() throws InterruptedException {
+	public void SuccessfulLogin() {
 		// check login feature - log in with right credentials
 
 		SuccessLoginPage okLogin = loadApplication()
