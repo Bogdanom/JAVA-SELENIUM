@@ -12,6 +12,7 @@ import lv493taqc.opencard.pages.guest.HomePage;
 public abstract class OpenCartTestRunner {
 
 	private static final Long ONE_SECOND_DELAY = 1000L;
+	
 	protected WebDriver driver;
 
 	@BeforeClass
@@ -19,7 +20,7 @@ public abstract class OpenCartTestRunner {
 		System.setProperty("webdriver.chrome.driver", "./lib/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		//driver.manage().window().setSize(new Dimension(640, 480));
+		//driver.manage().window().setSize(new Dimension(480, 640)); // mobile screen
 		driver.get("https://www.opencart.com/");
 		System.out.println("\t\t@BeforeClass");
 	}
@@ -32,7 +33,6 @@ public abstract class OpenCartTestRunner {
 
 	@BeforeTest
 	public void beforeTest() {
-		// driver.get("http://taqc-opencart.epizy.com/");
 		System.out.println("\t@BeforeTest");
 	}
 
@@ -46,7 +46,6 @@ public abstract class OpenCartTestRunner {
 		return new HomePage(driver);
 		}
 
-	
 	protected void delay() {
 		delay(1);
 	}
@@ -54,8 +53,6 @@ public abstract class OpenCartTestRunner {
 		try {
 			Thread.sleep(seconds*ONE_SECOND_DELAY);
 		} catch (InterruptedException e) {
-
-
 			e.printStackTrace();
 		}
 	}

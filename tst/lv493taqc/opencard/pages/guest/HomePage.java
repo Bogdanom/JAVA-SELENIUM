@@ -21,7 +21,6 @@ public class HomePage extends TopPart {
 	
 	// Page Object
 	
-
 	// logo
 	public WebElement getLogo() {
 		return logo;
@@ -32,7 +31,7 @@ public class HomePage extends TopPart {
 	}
 
 	public String getLogoText() {
-		return getLogo().getAttribute("alt");
+		return getLogo().getAttribute("title");
 	}
 
 	public boolean isDisplayedLogo() {

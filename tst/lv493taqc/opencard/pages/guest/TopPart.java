@@ -5,14 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class TopPart {
+	
 	protected WebDriver driver;
-	//
-	private WebElement logo;
+	
 	private WebElement login;
 	private WebElement register;
 
-	LoginPage loginPage;
-	RegisterPage registerPage;
+//	LoginPage loginPage;
+//	RegisterPage registerPage;
 
 	public TopPart(WebDriver driver) {
 		this.driver = driver;
@@ -23,30 +23,20 @@ public class TopPart {
 
 		login = driver.findElement(By.xpath("//header/nav[1]/div[1]/div[2]/div[1]/a[1]"));
 		register = driver.findElement(By.xpath("//header/nav[1]/div[1]/div[2]/div[1]/a[2]"));
-		logo = driver.findElement(By.xpath("//header/nav[1]/div[1]/div[1]/a[1]/img[1]"));
-		loginPage = new LoginPage(driver);
-		registerPage = new RegisterPage(driver);
+//		loginPage = new LoginPage(driver);
+//		registerPage = new RegisterPage(driver);
 
 	}
 	// Page Object
-
-	//LoginPage
-	public LoginPage getLoginPage() {
-		return loginPage;
-	}
-	
-	//RegisterPage
-	public RegisterPage getRegisterPage() {
-		return registerPage;
-	}
 	
 	// login
 	public WebElement getLogin() {
 		return login;
 	}
 
-	public void ClickLogin() {
+	public LoginPage clickLogin() {
 		getLogin().click();
+		return new LoginPage(driver);
 	}
 
 	public String getLoginText() {
@@ -62,8 +52,9 @@ public class TopPart {
 		return register;
 	}
 
-	public void clickRegister() {
+	public RegisterPage clickRegister() {
 		getRegister().click();
+		return new RegisterPage(driver);
 	}
 
 	public String getRegisterText() {
@@ -74,24 +65,17 @@ public class TopPart {
 		return getRegister().isDisplayed();
 	}
 
-	// logo
-	public WebElement getLogo() {
-		return logo;
-	}
-
-	public void ClickLogo() {
-		getLogo().click();
-	}
-
-	public String getLogoText() {
-		return getLogo().getAttribute("alt");
-	}
-
-	public boolean isDisplayedLogo() {
-		return getLogo().isDisplayed();
-	}
-
 	// Functional
 
 	// Business Logic
+	
+	//LoginPage
+//	public LoginPage getLoginPage() {
+//		return loginPage;
+//	}
+//	
+//	//RegisterPage
+//	public RegisterPage getRegisterPage() {
+//		return registerPage;
+//	}
 }

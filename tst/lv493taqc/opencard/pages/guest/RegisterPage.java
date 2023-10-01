@@ -13,8 +13,10 @@ public class RegisterPage {
 	private WebElement submit;
 	
 	public RegisterPage(WebDriver driver) {
+		
 		this.driver=driver;
 		initElements();
+		
 	}
 
 	private void initElements() {
@@ -22,12 +24,13 @@ public class RegisterPage {
 		email = driver.findElement(By.xpath("//input[@id='input-email']"));
 		password = driver.findElement(By.xpath("//input[@id='input-password']"));
 		//check submit xpath
-		submit = driver.findElement(By.xpath("//body/div[2]/div[2]/div[1]/form[1]/div[1]/div[1]/input[2]S"));
+		//submit = driver.findElement(By.xpath("//body/div[2]/div[2]/div[1]/form[1]/div[1]/div[1]/input[2]S"));
 		
 			}
 	
 	// Page Object
 	
+	// email
 	public WebElement getEmail() {
 		return email;
 	}
@@ -47,10 +50,15 @@ public class RegisterPage {
 	}
 
 	public String getEmailText() {
-		return getEmail().getText();
+		return getEmail().getAttribute("name");
 	}
-
+	
+	public boolean isDisplayedEmail() {
+		return getEmail().isDisplayed();
+	}
+	
 	// password
+	
 	public WebElement getPassword() {
 		return password;
 	}
@@ -70,10 +78,15 @@ public class RegisterPage {
 	}
 	
 	public String getPasswordText() {
-		return getPassword().getText();
+		return getPassword().getAttribute("name");
+	}
+	
+	public boolean isDisplayedPassword() {
+		return getPassword().isDisplayed();
 	}
 
 	// submit
+	
 	public WebElement getSubmit() {
 		return submit;
 	}

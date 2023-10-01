@@ -13,7 +13,7 @@ public class LoginPage {
 	private WebElement submit;
 	
 	public LoginPage(WebDriver driver) {
-		//super(driver);
+		
 		this.driver=driver;
 		initElements();
 	}
@@ -23,7 +23,7 @@ public class LoginPage {
 		email = driver.findElement(By.xpath("//input[@id='input-email']"));
 		password = driver.findElement(By.xpath("//input[@id='input-password']"));
 		submit = driver.findElement(By.xpath("//body/div[@id='account-login']/div[2]/div[1]/div[1]/form[1]/div[3]/div[1]/button[1]"));
-		
+	
 	}
 
 	// Page Object
@@ -41,10 +41,11 @@ public class LoginPage {
 		getEmail().clear();
 	}
 	
-	public void setEmail(String email) {
+	public LoginPage setEmail(String email) {
 		clickEmail();
 	    clearEmail();
 		getEmail().sendKeys(email);
+		return this;
 	}
 
 	public String getEmailText() {
@@ -64,23 +65,34 @@ public class LoginPage {
 		getPassword().clear();
 	}
 	
-	public void setPassword(String password) {
+	public LoginPage setPassword(String password) {
 		clickPassword();
 	    clearPassword();
 		getPassword().sendKeys(password);
+		return this;
 	}
 	
 	public String getPasswordText() {
 		return getPassword().getText();
 	}
 
-	// submit
+	// submit button
+	
 	public WebElement getSubmit() {
 		return submit;
 	}
 
 	public void clickSubmit() {
 		getSubmit().click();
+	}
+	
+	public SuccessLoginPage clickSubmitLogin() {
+		clickSubmit();
+		return new SuccessLoginPage(driver);
+	}
+	public FailedLoginPage clickSubmitNotlogin() {
+		getSubmit().click();
+		return new FailedLoginPage(driver);
 	}
 
 	public String getSubmitText() {

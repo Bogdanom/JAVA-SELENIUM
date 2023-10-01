@@ -10,7 +10,7 @@ import lv493taqc.opencard.pages.guest.SuccessLoginPage;
 
 public class SmokeTest extends OpenCartTestRunner {
 
-	 //@Test
+	 @Test
 	public void smokeTest() throws InterruptedException {
 
 		HomePage homePage = loadApplication();
@@ -22,14 +22,16 @@ public class SmokeTest extends OpenCartTestRunner {
 		System.out.println("== homePage Logo = " + homePage.getLogoText());
 		System.out.println("== homePage Register = " + homePage.getRegisterText());
 		System.out.println("== homePage Login = " + homePage.getLoginText());
+		System.out.println("=====================");
+		
 		
 		homePage.clickLogin();
-		delay(2);
+		delay();
 		
 	}
 
-	//@Test
-	public void UnsuccessfulLogin() throws InterruptedException {
+	@Test
+	public void loginPage() throws InterruptedException {
 		// check appropriate messages - log in with wrong credentials
 
 		FailedLoginPage failedLogin = loadApplication()
@@ -42,7 +44,11 @@ public class SmokeTest extends OpenCartTestRunner {
 		
 		String expected = failedLogin.WARNING_MESSAGE;
 		String actual = failedLogin.getAlertText();
-		if (actual.equalsIgnoreCase(expected))  System.out.println("==Actual message equals expected message");
+		if (actual.equalsIgnoreCase(expected))  {
+			System.out.println("==Actual message equals Expected message");
+		} else {
+			System.out.println("==Actual message NOT equals Expected message");
+		}
 		System.out.println("== Warning Message expected - " + expected);
 		System.out.println("== Warning Message actual   - " + actual);
 //		Assert.assertEquals(failedLogin.WARNING_MESSAGE, failedLogin.getAlertText());//error - space character on the 1st position
@@ -52,32 +58,12 @@ public class SmokeTest extends OpenCartTestRunner {
 		Assert.assertTrue(failedLogin.getQuestionText().contains(failedLogin.QUESTION_MESSAGE));
 				
 		failedLogin.clickLogo();
-		delay(2);
+		delay();
+		System.out.println("=====================");
 	}
 	
-	//@Test
-	// working
-	public void SuccessfulLogin() throws InterruptedException {
-		// check login feature - log in with right credentials
-
-		SuccessLoginPage successLogin = loadApplication()
-		.clickLogin()
-		.setEmail("bomemailn@gmail.coml")
-		.setPassword("Asdfg12@")
-		.clickSubmitLogin();
-
-		System.out.println("== TEST - OK ");
-		delay(2);
-		
-		System.out.println("== Account Text - " + successLogin.getAccountText());
-		
-		Assert.assertTrue(successLogin.getAccountText().contains(successLogin.TITLE));		
-
-		delay(2);
-	}
-
-	 //@Test
-	public void unsuccessfulRegister() throws InterruptedException {
+	@Test
+	public void registerPage() throws InterruptedException {
 		
         //check Register Page
 
@@ -89,7 +75,30 @@ public class SmokeTest extends OpenCartTestRunner {
 		
 		Assert.assertTrue(registerPage.isDisplayedEmail());
 		Assert.assertTrue(registerPage.isDisplayedPassword());
+		
+		System.out.println("=====================");
 	
+	}
+	
+	//@Test
+	// work if manual fast pin inputting 7654
+	// task - catch page for security pin inputing
+	public void SuccessfulLogin() throws InterruptedException {
+		// check login feature - log in with right credentials
+
+		SuccessLoginPage okLogin = loadApplication()
+		.clickLogin()
+		.setEmail("bomemailn@gmail.com")
+		.setPassword("Asdfg12@")
+		.clickSubmitLogin();
+
+		delay();
+		
+		System.out.println("== Account Text - " + okLogin.getAccountText());
+		
+		Assert.assertTrue(okLogin.getAccountText().contains(okLogin.TITLE));		
+
+		delay(2);
 	}
 
 }

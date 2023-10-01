@@ -9,16 +9,26 @@ public class SuccessLoginPage {
 
 	private WebElement account;
 
+	public final String TITLE = "Account";
+	
 	public SuccessLoginPage(WebDriver driver) {
 		this.driver = driver;
 		initElements();
+
 	}
 
 	private void initElements() {
-
-		account = driver.findElement(
-				By.xpath("//body/div[@id='account-account']/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/a[1]"));
-
+	// delay to wait page loading to have selector visible
+		try {
+			Thread.sleep(2000);
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		account = driver.findElement(By.xpath("//h2[contains(text(),'Account')]"));
+		
 	}
 
 	// Page Object
