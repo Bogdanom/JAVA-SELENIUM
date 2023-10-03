@@ -1,16 +1,16 @@
-package lv493taqc.opencard.tests;
+package opencart.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import lv493taqc.opencard.pages.guest.FailedLoginPage;
-import lv493taqc.opencard.pages.guest.HomePage;
-import lv493taqc.opencard.pages.guest.RegisterPage;
-import lv493taqc.opencard.pages.guest.SuccessLoginPage;
+import opencart.pages.guest.FailedLoginPage;
+import opencart.pages.guest.HomePage;
+import opencart.pages.guest.RegisterPage;
+import opencart.pages.guest.SuccessLoginPage;
 
 public class SmokeTest extends OpenCartTestRunner {
 
-	 //@Test
+	//@Test
 	public void smokeTest() {
 
 		HomePage homePage = loadApplication();
