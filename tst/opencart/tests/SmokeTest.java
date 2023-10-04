@@ -43,18 +43,16 @@ public class SmokeTest extends OpenCartTestRunner {
 		delay();
 		
 		System.out.println("== LoginPage ==");
+		
 		String expected = failedLogin.WARNING_MESSAGE;
-		String actual = failedLogin.getAlertText().trim();
-		if (actual.equalsIgnoreCase(expected))  {
-			System.out.println("==Actual message is equal to Expected message");
-		} else {
-			System.out.println("==Actual message is NOT equal to Expected message");
-		}
-		System.out.println("== Warning Message expected =" + expected+"=");
+		int strLength = expected.length();
+		
+		String actual = failedLogin.getAlertText();
+		actual = actual.substring(0, strLength);
+		
 		System.out.println("== Warning Message actual   =" + actual+"=");
-		//Assert.assertEquals(failedLogin.WARNING_MESSAGE, failedLogin.getAlertText());//error - some character on the last position
-		//Assert.assertTrue(failedLogin.getAlertText().contains(failedLogin.WARNING_MESSAGE));//error - some character on the last position
-
+		Assert.assertEquals(expected, actual);
+		
 		System.out.println("== Question Message - " + failedLogin.getQuestionText());
 		
 		Assert.assertTrue(failedLogin.getQuestionText().contains(failedLogin.QUESTION_MESSAGE));
@@ -85,7 +83,7 @@ public class SmokeTest extends OpenCartTestRunner {
 	}
 	
 	//@Test
-	// work if manual fast pin inputting 7654
+	// work if fast pin inputting 7654 (manual)
 	// task - catch page for security pin inputing
 	public void SuccessfulLogin() {
 		// check login feature - log in with right credentials
