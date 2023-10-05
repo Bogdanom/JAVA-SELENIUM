@@ -40,8 +40,6 @@ public class SmokeTest extends OpenCartTestRunner {
 		.setPassword("wrongPassword")
 		.clickSubmitNotlogin();
 		
-		delay();
-		
 		System.out.println("== LoginPage ==");
 		
 		String expected = failedLogin.WARNING_MESSAGE;
@@ -50,11 +48,10 @@ public class SmokeTest extends OpenCartTestRunner {
 		String actual = failedLogin.getAlertText();
 		actual = actual.substring(0, strLength);
 		
-		System.out.println("== Warning Message actual   =" + actual+"=");
+		System.out.println("== Warning Message actual - " + actual);
 		Assert.assertEquals(expected, actual);
 		
 		System.out.println("== Question Message - " + failedLogin.getQuestionText());
-		
 		Assert.assertTrue(failedLogin.getQuestionText().contains(failedLogin.QUESTION_MESSAGE));
 				
 		failedLogin.clickLogo();
