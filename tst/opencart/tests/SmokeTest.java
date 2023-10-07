@@ -1,8 +1,12 @@
 package opencart.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import opencart.data.repository.IUser;
+import opencart.data.repository.User;
+import opencart.data.repository.UserRepository;
 import opencart.pages.guest.FailedLoginPage;
 import opencart.pages.guest.HomePage;
 import opencart.pages.guest.RegisterPage;
@@ -30,14 +34,21 @@ public class SmokeTest extends OpenCartTestRunner {
 		System.out.println("=====================");
 	}
 
-	@Test
-	public void loginPage() {
+	@DataProvider
+	public Object[][] users() {
+		return new Object[][] {
+			{ UserRepository.get().wrongUser() }
+		};
+	}
+	
+	@Test(dataProvider = "users")
+	public void loginPage(IUser user) {
 		// check appropriate messages - log in with wrong credentials
 
 		FailedLoginPage failedLogin = loadApplication()
 		.clickLogin()
-		.setEmail("wrongEmail")
-		.setPassword("wrongPassword")
+		.setEmail(user)
+		.setPassword(user)
 		.clickSubmitNotlogin();
 		
 		System.out.println("== LoginPage ==");
@@ -87,8 +98,8 @@ public class SmokeTest extends OpenCartTestRunner {
 
 		SuccessLoginPage okLogin = loadApplication()
 		.clickLogin()
-		.setEmail("bomemailn@gmail.com")
-		.setPassword("Asdfg12@")
+	//	.setEmail("bomemailn@gmail.com")
+	//	.setPassword("Asdfg12@")
 		.clickSubmitLogin();
 
 		delay();
