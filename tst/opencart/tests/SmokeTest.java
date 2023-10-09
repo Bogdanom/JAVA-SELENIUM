@@ -39,8 +39,8 @@ public class SmokeTest extends OpenCartTestRunner {
 		return new Object[][] { 
 			{ UserRepository.get().wrongCreds() }, 
 			{ UserRepository.get().wrongEmail() },
-			{UserRepository.get().wrongPassword() }, 
-			{UserRepository.get().emptyCreds() }
+			{ UserRepository.get().wrongPassword() }, 
+			{ UserRepository.get().emptyCreds() }
 	   };
 	}
 
@@ -50,8 +50,7 @@ public class SmokeTest extends OpenCartTestRunner {
 
 		FailedLoginPage failedLogin = loadApplication()
 				.clickLogin()
-				.setEmail(wrongUser)
-				.setPassword(wrongUser)
+				.fillFields(wrongUser)
 				.clickSubmitNotlogin();
 
 		System.out.println("== LoginPage ==");
@@ -63,7 +62,7 @@ public class SmokeTest extends OpenCartTestRunner {
 		actual = actual.substring(0, strLength);
 
 		System.out.println("== Warning Message actual - " + actual);
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
 
 		System.out.println("== Question Message - " + failedLogin.getQuestionText());
 		Assert.assertTrue(failedLogin.getQuestionText().contains(failedLogin.QUESTION_MESSAGE));
