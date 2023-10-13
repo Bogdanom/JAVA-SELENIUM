@@ -46,14 +46,15 @@ public class SmokeTest extends OpenCartTestRunner {
 	@Test(dataProvider = "wrongUsers")
 	public void loginPage(IUser wrongUser) {
 		// check appropriate messages - log in with wrong credentials
-		//Your account has exceeded allowed number
-
+		
 		FailedLoginPage failedLogin = loadApplication()
 				.clickLogin()
 				.fillFields(wrongUser)
 				.clickSubmitNotlogin();
 
-		System.out.println("== LoginPage ==");
+		System.out.print("== LoginPage == ");
+		System.out.print("Credentials: email = " + wrongUser.getEmail());
+		System.out.println(", password = " + wrongUser.getPassword());
 
 		String expected = failedLogin.WARNING_MESSAGE;
 		int strLength = expected.length();
@@ -66,7 +67,7 @@ public class SmokeTest extends OpenCartTestRunner {
 		if (!actual.contains("Your account has exceeded allowed nu")) {
 		Assert.assertEquals(actual, expected);
 		} else {
-			System.out.println("test is skipped partialy. Need to be run once again");
+			System.out.print("!!! These credentials has blocked by the site for 1 hour. Run it later");
 		}
 
 		System.out.println("== Question Message - " + failedLogin.getQuestionText());
@@ -105,15 +106,17 @@ public class SmokeTest extends OpenCartTestRunner {
 	}
 	//@Test(dataProvider = "correctUsers")
 	// work if fast pin inputting 7654 (manual)
-	// task - catch page for security pin inputing
 	public void SuccessfulLogin(IUser correctUser) {
 		// check login feature - log in with right credentials
 
 		SuccessLoginPage okLogin = loadApplication().clickLogin()
-				.setEmail(correctUser)
-				.setPassword(correctUser)
+				.fillFields(correctUser)
 				.clickSubmitLogin();
 
+		System.out.print("== LoginPage == ");
+		System.out.print("Credentials: email = " + correctUser.getEmail());
+		System.out.println(", password = " + correctUser.getPassword());
+		
 		delay();
 
 		System.out.println("== Account Text - " + okLogin.getAccountText());
