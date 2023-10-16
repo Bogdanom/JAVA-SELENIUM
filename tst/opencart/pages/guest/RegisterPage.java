@@ -1,4 +1,4 @@
-package lv493taqc.opencard.pages.guest;
+package opencart.pages.guest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +10,7 @@ public class RegisterPage {
 	
 	private WebElement email;
 	private WebElement password;
-	private WebElement submit;
+	private WebElement logo;
 	
 	public RegisterPage(WebDriver driver) {
 		
@@ -23,14 +23,13 @@ public class RegisterPage {
 		
 		email = driver.findElement(By.xpath("//input[@id='input-email']"));
 		password = driver.findElement(By.xpath("//input[@id='input-password']"));
-		//check submit xpath
-		//submit = driver.findElement(By.xpath("//body/div[2]/div[2]/div[1]/form[1]/div[1]/div[1]/input[2]S"));
-		
-			}
+		logo = driver.findElement(By.xpath("//header/nav[1]/div[1]/div[1]/a[1]/img[1]"));
+	}
 	
 	// Page Object
 	
-	// email
+	// email field
+	
 	public WebElement getEmail() {
 		return email;
 	}
@@ -57,7 +56,7 @@ public class RegisterPage {
 		return getEmail().isDisplayed();
 	}
 	
-	// password
+	// password field
 	
 	public WebElement getPassword() {
 		return password;
@@ -83,27 +82,25 @@ public class RegisterPage {
 	
 	public boolean isDisplayedPassword() {
 		return getPassword().isDisplayed();
-	}
-
-	// submit
+	}	
 	
-	public WebElement getSubmit() {
-		return submit;
-	}
-
-	public void clickSubmit() {
-		getSubmit().click();
-	}
-
-	public String getSubmitText() {
-		return getSubmit().getText();
-	}
-
-	public boolean isDisplayedSubmit() {
-		return getSubmit().isDisplayed();
-	}
+	// logo
 	
-	
+		public WebElement getLogo() {
+			return logo;
+		}
+
+		public void clickLogo() {
+			getLogo().click();
+		}
+
+		public String getLogoText() {
+			return getLogo().getAttribute("alt");
+		}
+
+		public boolean isDisplayedLogo() {
+			return getLogo().isDisplayed();
+		}
 			// Functional
 			
 			// Business Logic
