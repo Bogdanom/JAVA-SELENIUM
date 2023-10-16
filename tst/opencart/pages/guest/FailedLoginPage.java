@@ -1,4 +1,4 @@
-package lv493taqc.opencard.pages.guest;
+package opencart.pages.guest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,13 +30,10 @@ public class FailedLoginPage {
 
 	// Page Object
 
-	// question
+	// question message
+	
 	public WebElement getQuestion() {
 		return question;
-	}
-
-	public void clickQuestion() {
-		getQuestion().click();
 	}
 
 	public String getQuestionText() {
@@ -47,13 +44,10 @@ public class FailedLoginPage {
 		return getQuestion().isDisplayed();
 	}
 
-	// alert
+	// alert  message
+	
 	public WebElement getAlert() {
 		return alert;
-	}
-
-	public void clickAlert() {
-		getAlert().click();
 	}
 
 	public String getAlertText() {
@@ -65,6 +59,7 @@ public class FailedLoginPage {
 	}
 
 	// logo
+	
 	public WebElement getLogo() {
 		return logo;
 	}

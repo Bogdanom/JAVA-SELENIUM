@@ -1,8 +1,10 @@
-package lv493taqc.opencard.pages.guest;
+package opencart.pages.guest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import opencart.data.repository.IUser;
 
 public class LoginPage {
 
@@ -28,7 +30,8 @@ public class LoginPage {
 
 	// Page Object
 
-	// email
+	// email field
+	
 	public WebElement getEmail() {
 		return email;
 	}
@@ -41,18 +44,12 @@ public class LoginPage {
 		getEmail().clear();
 	}
 	
-	public LoginPage setEmail(String email) {
-		clickEmail();
-	    clearEmail();
-		getEmail().sendKeys(email);
-		return this;
-	}
-
 	public String getEmailText() {
 		return getEmail().getText();
 	}
 
-	// password
+	// password field
+	
 	public WebElement getPassword() {
 		return password;
 	}
@@ -63,13 +60,6 @@ public class LoginPage {
 
 	public void clearPassword() {
 		getPassword().clear();
-	}
-	
-	public LoginPage setPassword(String password) {
-		clickPassword();
-	    clearPassword();
-		getPassword().sendKeys(password);
-		return this;
 	}
 	
 	public String getPasswordText() {
@@ -91,7 +81,7 @@ public class LoginPage {
 		return new SuccessLoginPage(driver);
 	}
 	public FailedLoginPage clickSubmitNotlogin() {
-		getSubmit().click();
+		clickSubmit();
 		return new FailedLoginPage(driver);
 	}
 
@@ -101,6 +91,28 @@ public class LoginPage {
 
 	public boolean isDisplayedSubmit() {
 		return getSubmit().isDisplayed();
+	}
+	
+	// Functional
+	
+	public LoginPage setEmail(IUser user) {
+		clickEmail();
+	    clearEmail();
+		getEmail().sendKeys(user.getEmail());
+		return this;
+	}
+
+	public LoginPage setPassword(IUser user) {
+		clickPassword();
+	    clearPassword();
+		getPassword().sendKeys(user.getPassword());
+		return this;
+	}
+	
+	public LoginPage fillFields(IUser user) {
+		this.setEmail(user)
+		    .setPassword(user);
+		return this;
 	}
 	
 }

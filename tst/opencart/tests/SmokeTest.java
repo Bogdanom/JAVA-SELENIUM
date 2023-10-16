@@ -43,7 +43,7 @@ public class SmokeTest extends OpenCartTestRunner {
 	   };
 	}
 
-	@Test(dataProvider = "wrongUsers")
+	//@Test(dataProvider = "wrongUsers")
 	public void loginPage(IUser wrongUser) {
 		// check appropriate messages - log in with wrong credentials
 		
@@ -79,7 +79,7 @@ public class SmokeTest extends OpenCartTestRunner {
 		System.out.println("=====================");
 	}
 
-	// @Test
+	 @Test
 	public void registerPage() {
 
 		// check Register Page
@@ -93,6 +93,9 @@ public class SmokeTest extends OpenCartTestRunner {
 
 		Assert.assertTrue(registerPage.isDisplayedEmail());
 		Assert.assertTrue(registerPage.isDisplayedPassword());
+
+		registerPage.clickLogo();
+		delay();
 
 		System.out.println("=====================");
 

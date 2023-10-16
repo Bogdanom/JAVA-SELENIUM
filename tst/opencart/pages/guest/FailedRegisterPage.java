@@ -1,4 +1,4 @@
-package lv493taqc.opencard.pages.guest;
+package opencart.pages.guest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

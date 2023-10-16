@@ -1,4 +1,4 @@
-package lv493taqc.opencard.tests;
+package opencart.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,7 +7,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
-import lv493taqc.opencard.pages.guest.HomePage;
+import opencart.pages.guest.HomePage;
 
 public abstract class OpenCartTestRunner {
 
@@ -27,7 +27,9 @@ public abstract class OpenCartTestRunner {
 
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+		if (driver != null) {
+			driver.quit();
+		}
 		System.out.println("\t\t@AfterClass");
 	}
 

@@ -1,4 +1,4 @@
-package lv493taqc.opencard.pages.guest;
+package opencart.pages.guest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +10,7 @@ public class TopPart {
 	
 	private WebElement login;
 	private WebElement register;
-
-//	LoginPage loginPage;
-//	RegisterPage registerPage;
+	
 
 	public TopPart(WebDriver driver) {
 		this.driver = driver;
@@ -23,8 +21,6 @@ public class TopPart {
 
 		login = driver.findElement(By.xpath("//header/nav[1]/div[1]/div[2]/div[1]/a[1]"));
 		register = driver.findElement(By.xpath("//header/nav[1]/div[1]/div[2]/div[1]/a[2]"));
-//		loginPage = new LoginPage(driver);
-//		registerPage = new RegisterPage(driver);
 
 	}
 	// Page Object
@@ -71,13 +67,4 @@ public class TopPart {
 
 	// Business Logic
 	
-	//LoginPage
-//	public LoginPage getLoginPage() {
-//		return loginPage;
-//	}
-//	
-//	//RegisterPage
-//	public RegisterPage getRegisterPage() {
-//		return registerPage;
-//	}
 }

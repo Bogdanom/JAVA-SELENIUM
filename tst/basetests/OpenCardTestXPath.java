@@ -1,4 +1,4 @@
-package lv493taqc.opencard;
+package basetests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

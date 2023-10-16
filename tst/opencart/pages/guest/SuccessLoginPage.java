@@ -1,10 +1,11 @@
-package lv493taqc.opencard.pages.guest;
+package opencart.pages.guest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class SuccessLoginPage {
+	
 	private WebDriver driver;
 
 	private WebElement account;
@@ -33,7 +34,8 @@ public class SuccessLoginPage {
 
 	// Page Object
 
-	// account
+	// account TITLE
+	
 	public WebElement getAccount() {
 		return account;
 	}
@@ -51,9 +53,9 @@ public class SuccessLoginPage {
 	}
 
 	// account details
+	
 	public WebElement getAccountDetails() {
-		return driver.findElement(By.xpath(
-				"//body[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[2]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/a[1]"));
+		return driver.findElement(By.xpath("work"));
 	}
 
 	public void clickAccountDetails() {

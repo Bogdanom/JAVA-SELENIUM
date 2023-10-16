@@ -1,4 +1,4 @@
-package lv493taqc.opencard;
+package basetests;
 
 import java.util.List;
 

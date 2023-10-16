@@ -5,4 +5,4 @@
  * @author helo
  *
  */
-package lv493taqc.opencard.tests;
+package opencart.tests;

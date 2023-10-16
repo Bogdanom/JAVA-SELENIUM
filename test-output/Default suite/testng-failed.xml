@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lv493taqc.opencard.tests.SmokeTest">
+      <class name="opencart.tests.SmokeTest">
         <methods>
-          <include name="SuccessfulLogin"/>
           <include name="beforeClass"/>
-          <include name="afterClass"/>
-          <include name="afterTest"/>
+          <include name="loginPage" invocation-numbers="0 3"/>
           <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- lv493taqc.opencard.tests.SmokeTest -->
+      </class> <!-- opencart.tests.SmokeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
